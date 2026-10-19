@@ -1,0 +1,415 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BADMINTON HUB IDEAS - By Bidur Aryal</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Font (Inter) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom Tab Transition Animations */
+        .page-view {
+            display: none;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .page-view.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Gradient backdrop effects */
+        .bg-badminton-gradient {
+            background: linear-gradient(135deg, #0f172a 0%, #065f46 50%, #0284c7 100%);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #34d399 0%, #38bdf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col justify-between selection:bg-emerald-500 selection:text-white">
+
+    <!-- Header & Navigation Bar -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-slate-900/80 border-b border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo / Title -->
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('page1')">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 to-cyan-500 flex items-center justify-center shadow-lg shadow-emerald-500/20">
+                        <i class="fa-solid fa-shuttlecock text-slate-900 text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-lg sm:text-xl tracking-tight text-white block leading-tight">BADMINTON HUB IDEAS</span>
+                        <span class="text-xs text-emerald-400 font-medium">By Bidur Aryal • Nepal 🇳🇵</span>
+                    </div>
+                </div>
+
+                <!-- Navigation Tabs (Desktop) -->
+                <nav class="hidden md:flex space-x-2 bg-slate-800/80 p-1.5 rounded-xl border border-slate-700/50">
+                    <button onclick="switchTab('page1')" id="nav-page1" class="nav-btn px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 text-white bg-emerald-600 shadow-md">
+                        <i class="fa-solid fa-house mr-2"></i>Home
+                    </button>
+                    <button onclick="switchTab('page2')" id="nav-page2" class="nav-btn px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 text-slate-400 hover:text-white hover:bg-slate-700/50">
+                        <i class="fa-solid fa-book-open mr-2"></i>Opinion & Rules
+                    </button>
+                    <button onclick="switchTab('page3')" id="nav-page3" class="nav-btn px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 text-slate-400 hover:text-white hover:bg-slate-700/50">
+                        <i class="fa-solid fa-envelope mr-2"></i>Contact & Feedback
+                    </button>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="p-2.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white border border-slate-700 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-800 bg-slate-900 px-4 pt-2 pb-4 space-y-2">
+            <button onclick="switchTab('page1'); toggleMobileMenu()" id="mob-page1" class="mob-nav-btn w-full text-left px-4 py-3 rounded-xl font-medium flex items-center bg-emerald-600 text-white">
+                <i class="fa-solid fa-house w-6"></i>Home
+            </button>
+            <button onclick="switchTab('page2'); toggleMobileMenu()" id="mob-page2" class="mob-nav-btn w-full text-left px-4 py-3 rounded-xl font-medium flex items-center text-slate-300 hover:bg-slate-800">
+                <i class="fa-solid fa-book-open w-6"></i>Opinion & Rules
+            </button>
+            <button onclick="switchTab('page3'); toggleMobileMenu()" id="mob-page3" class="mob-nav-btn w-full text-left px-4 py-3 rounded-xl font-medium flex items-center text-slate-300 hover:bg-slate-800">
+                <i class="fa-solid fa-envelope w-6"></i>Contact & Feedback
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content Body -->
+    <main class="flex-grow max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        <!-- ================= PAGE 1: HOME ================= -->
+        <section id="page1" class="page-view active">
+            <!-- Hero Banner -->
+            <div class="relative overflow-hidden rounded-3xl bg-badminton-gradient border border-emerald-500/20 shadow-2xl p-8 sm:p-12 mb-10">
+                <div class="absolute -right-10 -bottom-10 opacity-10 text-white pointer-events-none">
+                    <i class="fa-solid fa-shuttlecock text-[280px]"></i>
+                </div>
+                
+                <div class="relative z-10 max-w-3xl">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-semibold mb-6">
+                        <span>🇳🇵 Proudly Made in Nepal</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-6xl font-black text-white tracking-tight leading-tight mb-4">
+                        BADMINTON HUB <span class="text-gradient">IDEAS</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl text-slate-300 mb-8 font-light leading-relaxed">
+                        Welcome to my personal badminton platform curated by <strong class="text-white font-semibold">Bidur Aryal</strong>. Explore key strategies, official guidelines, and deep insights into the wonderful world of badminton in Nepal!
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <button onclick="switchTab('page2')" class="px-6 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold transition-all shadow-lg shadow-emerald-500/25 flex items-center gap-2">
+                            <span>Read My Opinion & Rules</span>
+                            <i class="fa-solid fa-arrow-right text-sm"></i>
+                        </button>
+                        <button onclick="switchTab('page3')" class="px-6 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold border border-slate-700 transition-all flex items-center gap-2">
+                            <span>Get in Touch</span>
+                            <i class="fa-solid fa-comments"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features / Info Highlights Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-slate-800/50 border border-slate-700/60 p-6 rounded-2xl hover:border-emerald-500/40 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Unique Perspectives</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Personal insights and analytical ideas regarding local sports culture, court strategies, and badminton growth in Nepal.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-slate-800/50 border border-slate-700/60 p-6 rounded-2xl hover:border-cyan-500/40 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-list-check"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Simplified Rules</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Clear, bite-sized breakdown of official badminton regulations, scoring mechanisms, court line boundaries, and fault rules.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-slate-800/50 border border-slate-700/60 p-6 rounded-2xl hover:border-amber-500/40 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-heart text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Honest Reflection</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        A candid personal journey detailing why playing professionally wasn't the path chosen, balancing ambition with reality.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= PAGE 2: OPINION & RULES ================= -->
+        <section id="page2" class="page-view">
+            <div class="space-y-8">
+                <!-- Section 1: My Opinion -->
+                <div class="bg-slate-800/60 border border-slate-700 rounded-3xl p-6 sm:p-8">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="p-2.5 rounded-lg bg-emerald-500/10 text-emerald-400">
+                            <i class="fa-solid fa-quote-left text-xl"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-white">My Opinion on Badminton</h2>
+                    </div>
+                    <p class="text-slate-300 leading-relaxed mb-4">
+                        Badminton is more than just a racquet sport; it's a dynamic chess match played at lightning speed! In Nepal, badminton has seen massive popularity across all age groups because of its accessibility and health benefits.
+                    </p>
+                    <p class="text-slate-300 leading-relaxed">
+                        I believe that with better indoor stadium infrastructure and structured grassroot coaching programs, Nepal has immense potential to raise national champions capable of competing internationally. The agility, mental sharpness, and fast reflexes required make it one of the most exciting games in the world!
+                    </p>
+                </div>
+
+                <!-- Section 2: Basic Rules of Badminton -->
+                <div class="bg-slate-800/60 border border-slate-700 rounded-3xl p-6 sm:p-8">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="p-2.5 rounded-lg bg-cyan-500/10 text-cyan-400">
+                            <i class="fa-solid fa-trophy text-xl"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-white">Basic Rules of Badminton</h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-slate-900/50 p-5 rounded-2xl border border-slate-700/50">
+                            <h3 class="font-bold text-emerald-400 text-lg mb-2 flex items-center gap-2">
+                                <i class="fa-solid fa-1"></i> Scoring System
+                            </h3>
+                            <ul class="text-sm text-slate-300 space-y-2 list-disc list-inside">
+                                <li>A match consists of the best of 3 games of 21 points each.</li>
+                                <li>Every time there is a serve, a point is scored (Rally scoring).</li>
+                                <li>At 20-all, the side which gains a 2-point lead first wins that game.</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-slate-900/50 p-5 rounded-2xl border border-slate-700/50">
+                            <h3 class="font-bold text-cyan-400 text-lg mb-2 flex items-center gap-2">
+                                <i class="fa-solid fa-2"></i> Service Guidelines
+                            </h3>
+                            <ul class="text-sm text-slate-300 space-y-2 list-disc list-inside">
+                                <li>Service must be struck underhand below waist level (1.15m height).</li>
+                                <li>Serve diagonally into your opponent's service court.</li>
+                                <li>If score is even: serve from right court. If odd: serve from left court.</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-slate-900/50 p-5 rounded-2xl border border-slate-700/50">
+                            <h3 class="font-bold text-amber-400 text-lg mb-2 flex items-center gap-2">
+                                <i class="fa-solid fa-3"></i> Faults & Violations
+                            </h3>
+                            <ul class="text-sm text-slate-300 space-y-2 list-disc list-inside">
+                                <li>Shuttle landing outside boundaries or hitting the ceiling/net.</li>
+                                <li>Player touches the net with their body or racquet during play.</li>
+                                <li>Double-hitting the shuttle on the same side of the court.</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-slate-900/50 p-5 rounded-2xl border border-slate-700/50">
+                            <h3 class="font-bold text-purple-400 text-lg mb-2 flex items-center gap-2">
+                                <i class="fa-solid fa-4"></i> Court Boundaries
+                            </h3>
+                            <ul class="text-sm text-slate-300 space-y-2 list-disc list-inside">
+                                <li>Singles: Long and narrow boundaries apply.</li>
+                                <li>Doubles: Short and wide service court during serve, full court after serve.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 3: Why I Can't Be a Badminton Player -->
+                <div class="bg-slate-800/60 border border-slate-700 rounded-3xl p-6 sm:p-8">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="p-2.5 rounded-lg bg-rose-500/10 text-rose-400">
+                            <i class="fa-solid fa-user-xmark text-xl"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-white">Why I Can't Be a Professional Badminton Player</h2>
+                    </div>
+
+                    <div class="space-y-4 text-slate-300">
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-900/40 border border-slate-800">
+                            <i class="fa-solid fa-clock text-rose-400 text-xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">Time & Academic Commitments</h4>
+                                <p class="text-sm">Professional training demands 6-8 hours daily on court. Balancing intense academic pursuits and personal goals leaves limited time for high-level athletic training.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-900/40 border border-slate-800">
+                            <i class="fa-solid fa-laptop-code text-cyan-400 text-xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">Focus on Tech & IT Career</h4>
+                                <p class="text-sm">My true long-term passion lies in technology, web design, and software development. I prefer being an enthusiastic amateur player while building digital platforms like this website!</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-900/40 border border-slate-800">
+                            <i class="fa-solid fa-dumbbell text-emerald-400 text-xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">Physical Stamina & Facilities</h4>
+                                <p class="text-sm">Competitive tournament play requires rigorous conditioning and specialized athletic setups that weren't readily available during my early formative years.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= PAGE 3: CONTACT & FEEDBACK ================= -->
+        <section id="page3" class="page-view">
+            <div class="max-w-3xl mx-auto space-y-8">
+                <!-- Warm Greeting Box -->
+                <div class="text-center bg-gradient-to-r from-emerald-900/40 via-slate-800 to-cyan-900/40 p-8 rounded-3xl border border-slate-700 shadow-xl">
+                    <div class="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center text-2xl mx-auto mb-4">
+                        <i class="fa-solid fa-face-smile"></i>
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-2">Thanks for visiting our website!</h2>
+                    <p class="text-slate-300 font-medium">Have a great day ahead! 🏸✨</p>
+                </div>
+
+                <!-- Contact Details -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="bg-slate-800/60 border border-slate-700 p-6 rounded-2xl flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl shrink-0">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs text-slate-400 block uppercase font-bold tracking-wider">Contact Number</span>
+                            <span class="text-white font-semibold text-lg">+977 9800000000</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-800/60 border border-slate-700 p-6 rounded-2xl flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-xl shrink-0">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs text-slate-400 block uppercase font-bold tracking-wider">Email Address</span>
+                            <span class="text-white font-semibold text-sm sm:text-base">bidur.aryal@example.com</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Feedback Form -->
+                <div class="bg-slate-800/70 border border-slate-700 rounded-3xl p-6 sm:p-8 shadow-xl">
+                    <h3 class="text-xl font-bold text-white mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-paper-plane text-emerald-400"></i> Send Me Your Opinion
+                    </h3>
+                    <p class="text-slate-400 text-sm mb-6">Your suggestions and thoughts regarding badminton ideas are super valuable!</p>
+
+                    <form id="feedbackForm" onsubmit="handleFeedbackSubmit(event)" class="space-y-4">
+                        <div>
+                            <label for="userName" class="block text-xs font-semibold text-slate-300 uppercase mb-2">Your Name</label>
+                            <input type="text" id="userName" required placeholder="Enter your full name" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition-colors text-sm">
+                        </div>
+
+                        <div>
+                            <label for="userEmail" class="block text-xs font-semibold text-slate-300 uppercase mb-2">Your Email</label>
+                            <input type="email" id="userEmail" required placeholder="name@example.com" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition-colors text-sm">
+                        </div>
+
+                        <div>
+                            <label for="userOpinion" class="block text-xs font-semibold text-slate-300 uppercase mb-2">Your Opinion / Thoughts</label>
+                            <textarea id="userOpinion" rows="4" required placeholder="Share your suggestions, rules advice, or badminton ideas..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition-colors text-sm resize-none"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-3.5 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 text-slate-950 font-bold rounded-xl transition-all shadow-lg shadow-emerald-500/20 flex items-center justify-center gap-2">
+                            <span>Submit Feedback</span>
+                            <i class="fa-solid fa-paper-plane text-xs"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Notification Toast / Modal -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 max-w-md bg-slate-800 border border-emerald-500/50 text-white p-4 rounded-2xl shadow-2xl flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+            <i class="fa-solid fa-circle-check text-xl"></i>
+        </div>
+        <div>
+            <h4 class="font-bold text-sm text-white">Feedback Received!</h4>
+            <p class="text-xs text-slate-300">Thank you for sharing your thoughts with Bidur Aryal.</p>
+        </div>
+    </div>
+
+    <!-- Website Footer -->
+    <footer class="border-t border-slate-800 bg-slate-950/80 py-6 mt-12">
+        <div class="max-w-6xl mx-auto px-4 text-center text-xs text-slate-500 space-y-2">
+            <p>&copy; 2026 BADMINTON HUB IDEAS. Crafted by <strong class="text-slate-400">Bidur Aryal</strong> from Nepal 🇳🇵.</p>
+            <p class="text-slate-600">Designed to share insights, badminton rules, and personal thoughts.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Tab Switcher Logic
+        function switchTab(pageId) {
+            // Hide all views
+            const views = document.querySelectorAll('.page-view');
+            views.forEach(view => {
+                view.classList.remove('active');
+            });
+
+            // Show targeted view
+            const target = document.getElementById(pageId);
+            if (target) {
+                target.classList.add('active');
+            }
+
+            // Update Desktop Nav Button Styles
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.className = "nav-btn px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 text-slate-400 hover:text-white hover:bg-slate-700/50";
+            });
+            const activeDesktopNav = document.getElementById('nav-' + pageId);
+            if (activeDesktopNav) {
+                activeDesktopNav.className = "nav-btn px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 text-white bg-emerald-600 shadow-md";
+            }
+
+            // Update Mobile Nav Button Styles
+            document.querySelectorAll('.mob-nav-btn').forEach(btn => {
+                btn.className = "mob-nav-btn w-full text-left px-4 py-3 rounded-xl font-medium flex items-center text-slate-300 hover:bg-slate-800";
+            });
+            const activeMobileNav = document.getElementById('mob-' + pageId);
+            if (activeMobileNav) {
+                activeMobileNav.className = "mob-nav-btn w-full text-left px-4 py-3 rounded-xl font-medium flex items-center bg-emerald-600 text-white";
+            }
+
+            // Scroll smoothly to top when switching pages
+            window.scrollTo({ top: 
+        // Handle Feedback Submission
+        function handleFeedbackSubmit(event) {
+            event.preventDefault();
+
+            // Clear form fields
+            document.getElementById('feedbackForm').reset();
+
+            // Show Toast No.classList.add('translate-y-20', 'opacity-0');
+            }, 4000);
+        }
+    </script>
+</body>
+</html>
+
